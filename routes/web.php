@@ -4,6 +4,7 @@ use App\Models\Blog;
 use App\Models\About;
 use App\Models\Destination;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Faq\FaqController;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Home\HomeController;
@@ -12,6 +13,28 @@ use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Packages\PackageController;
 use App\Http\Controllers\Destination\DestinationController;
 use App\Http\Controllers\TripBooking\TripBookingController;
+
+// Artisan Route
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('route:clear');
+    Artisan::call('migrate');
+
+    return "Cache Cleared Successfully";
+});
+
+Route::get('/optimize-clear', function () {
+    Artisan::call('optimize:clear');
+
+    return "Optimize Cleared Successfully";
+});
+
+
+Route::get('/storage-link', function () {
+    Artisan::call('storage:link');
+    return "Storage Linked";
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
