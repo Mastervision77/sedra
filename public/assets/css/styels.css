@@ -1,0 +1,196 @@
+body {
+    overflow-x: hidden !important;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.max-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+
+
+.max-lines-card{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.tab-btn {
+    color: #7a5f3b; /* muted gold text */
+    background: transparent;
+}
+
+/* Hover effect */
+.tab-btn:hover {
+    color: #c39e6d;
+    background-color: rgba(195, 158, 109, 0.1);
+}
+
+/* Active tab */
+.tab-btn.active {
+    color: #c39e6d;
+    background-color: #fff;
+    border-radius: 0.75rem; /* Tailwind rounded-lg */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.max-lines-dest{
+     display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+
+.editor-content {
+    /* Base styles for paragraphs */
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+.editor-content h1 {
+    @apply text-4xl font-bold mb-6 text-primary;
+}
+
+.editor-content h2 {
+    @apply text-3xl font-semibold mb-5 text-primary;
+}
+
+.editor-content h3 {
+    @apply text-2xl font-semibold mb-4 text-primary;
+}
+
+.editor-content p {
+    @apply text-gray-600 mb-4;
+}
+
+.editor-content ul {
+    @apply list-disc pl-6 mb-4 text-gray-600;
+}
+
+.editor-content li {
+    @apply mb-2;
+}
+
+.editor-content a {
+    @apply text-gold underline hover:text-primary transition;
+}
+
+.editor-content img {
+    @apply rounded-lg my-4 w-full object-cover;
+}
+
+/* container */
+/* =========================
+   Pagination Wrapper
+========================= */
+.custom-pagination {
+    width: 100%;
+}
+
+/* =========================
+   Nav Layout
+========================= */
+.custom-pagination nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lora', serif;
+}
+
+/* =========================
+   Hide "Showing x to y of z results"
+========================= */
+.custom-pagination nav>div:first-child {
+    display: none;
+}
+
+/* =========================
+   Buttons Container
+========================= */
+.custom-pagination nav>div:last-child span.inline-flex {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* =========================
+   Pagination Buttons
+========================= */
+.custom-pagination nav a,
+.custom-pagination nav span[aria-current="page"] span,
+.custom-pagination nav span[aria-disabled="true"] span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 9999px;
+    border: 1px solid #D4AF37;
+    /* Gold */
+    color: #D4AF37;
+    background: transparent;
+    transition: all 0.25s ease;
+}
+
+/* =========================
+   Hover State
+========================= */
+.custom-pagination nav a:hover {
+    background-color: #D4AF37;
+    color: #ffffff;
+}
+
+/* =========================
+   Active Page
+========================= */
+.custom-pagination nav span[aria-current="page"] span {
+    background-color: #D4AF37;
+    color: #ffffff;
+    cursor: default;
+}
+
+/* =========================
+   Disabled Prev / Next
+========================= */
+.custom-pagination nav span[aria-disabled="true"] span {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =========================
+   Arrows
+========================= */
+.custom-pagination svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================
+   Mobile Fix
+========================= */
+@media (max-width: 640px) {
+    .custom-pagination nav>div:last-child span.inline-flex {
+        gap: 0.35rem;
+    }
+
+    .custom-pagination nav a,
+    .custom-pagination nav span[aria-current="page"] span,
+    .custom-pagination nav span[aria-disabled="true"] span {
+        min-width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}
