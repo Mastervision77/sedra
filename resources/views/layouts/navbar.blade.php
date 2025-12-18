@@ -66,7 +66,7 @@ $setting = App\Models\Settings::first();
     <div id="mobile-menu"
         class="absolute z-50 px-4 h-screen bg-primary w-full lg:hidden hidden py-4 border-t border-gold/20">
         <div class="flex flex-col gap-8">
-            <a href="{{route('mediacenter')}}"
+            <a href=""
                 class="text-accent hover:text-gold transition-colors duration-300 font-lora text-sm uppercase tracking-wide">Media
                 Center</a>
             <a href="{{route('about')}}"
