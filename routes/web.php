@@ -12,6 +12,7 @@ use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Packages\PackageController;
 use App\Http\Controllers\Destination\DestinationController;
+use App\Http\Controllers\Mediacenter\MediacenterController;
 use App\Http\Controllers\TripBooking\TripBookingController;
 
 // Artisan Route
@@ -56,8 +57,7 @@ Route::post('/tripbooking',[TripBookingController::class, 'tripbooking'])->name(
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}',[BlogController::class,'show'])->name('blogDetails');
-Route::get('/mediacenter', function () {
-    return view('pages.mediacenter');
-});
+Route::get('/mediacenter', [MediacenterController::class, 'index'])->name('mediacenter');
+
 
 

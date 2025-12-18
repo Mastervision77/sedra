@@ -92,6 +92,58 @@ summary::-webkit-details-marker {
     @apply rounded-lg my-4 w-full object-cover;
 }
 
+.lg\:col-span-2 {
+    /* اختياري: تحسين القراءة */
+    line-height: 1.75;
+}
+
+.lg\:col-span-2 h1,
+.lg\:col-span-2 h2,
+.lg\:col-span-2 h3,
+.lg\:col-span-2 h4,
+.lg\:col-span-2 h5,
+.lg\:col-span-2 h6 {
+    font-weight: 700;
+    color: #111827;
+    /* gray-900 */
+}
+
+.lg\:col-span-2 h1 {
+    font-size: 2.25rem;
+}
+
+.lg\:col-span-2 h2 {
+    font-size: 1.875rem;
+}
+
+.lg\:col-span-2 h3 {
+    font-size: 1.5rem;
+}
+
+.lg\:col-span-2 h4 {
+    font-size: 1.25rem;
+}
+
+
+.lg\:col-span-2 p {
+    font-size: 1.125rem;
+    /* text-lg */
+    color: #4b5563;
+    /* text-gray-600 */
+    margin-bottom: 1.5rem;
+}
+
+
+.lg\:col-span-2 ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.lg\:col-span-2 li {
+    margin-bottom: 0.75rem;
+    color: #4b5563;
+}
+
 /* container */
 /* =========================
    Pagination Wrapper

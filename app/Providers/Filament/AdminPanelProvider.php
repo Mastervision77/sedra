@@ -66,7 +66,7 @@ class AdminPanelProvider extends PanelProvider
     protected function brandText(): string
     {
         if (!Schema::hasTable('settings')) {
-            return 'Thomas-Cook';
+            return 'Sedra';
         }
 
         $brandTextJson = DB::table('settings')->value('sitename');
@@ -75,7 +75,7 @@ class AdminPanelProvider extends PanelProvider
             $brandText = json_decode($brandTextJson, true);
             $locale = app()->getLocale();
 
-            return $brandText[$locale] ?? 'Thomas-Cook';
+            return $brandText[$locale] ?? 'Sedra';
         }
 
         return 'Thomas-Cook';

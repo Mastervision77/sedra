@@ -24,7 +24,7 @@
                     <p class="font-lora text-lg md:text-xl text-accent/90 mb-8 max-w-2xl mx-auto">
                         {!! $tophomesection->subtitle !!}
                     </p>
-                    <a href="packages.html"
+                    <a href="{{route('packages')}}"
                         class="inline-flex items-center justify-center bg-gold hover:bg-gold/90 text-primary font-lora text-base px-6 py-3 rounded uppercase tracking-wider group transition-all duration-300">
                         Explore Packages
                         <!-- Arrow Right Icon -->
@@ -234,7 +234,7 @@
                     </p> --}}
 
                     <!-- Learn More Button -->
-                    <a href="about.html"
+                    <a href="{{route('about')}}"
                         class="inline-block bg-primary hover:bg-primary/90 text-accent font-lora px-8 py-6 uppercase tracking-wide">
                         Learn More About Us
                     </a>

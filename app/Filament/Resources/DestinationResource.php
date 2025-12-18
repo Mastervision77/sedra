@@ -24,7 +24,7 @@ class DestinationResource extends Resource
 {
     protected static ?string $model = Destination::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-rocket-launch';
 
     public static function form(Form $form): Form
     {

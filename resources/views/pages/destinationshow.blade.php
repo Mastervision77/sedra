@@ -45,13 +45,13 @@ $setting = App\Models\Settings::first();
         </div>
     </section>
 
-    <div class="container mx-auto px-4 py-16">
+    <div class="container mx-auto px-4 pt-11 pb-16">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
             <!-- Left Column -->
             <div class="lg:col-span-2">
                 <h2 class="text-3xl font-bold mb-6">{{ $destination->title }}</h2>
-                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                <p class="text-lg text-gray-600 leading-relaxed">
                     {!! $destination->content !!}
                 </p>
 
