@@ -61,16 +61,16 @@
                                 <div class="swiper-wrapper">
 
                                     @foreach ($destination->packages as $package)
-                                    <div class="swiper-slide w-full lg:w-[300px]">
+                                    <div class="swiper-slide w-full lg:w-[300px] h-[600px]">
                                         <div
-                                            class="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                            class="overflow-hidden border-none h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                                             <div class="relative h-64 overflow-hidden">
                                                 <img src="{{ asset('storage/'.$package->outerimage) }}" alt="{{ $package->title }}"
                                                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                                                     loading="lazy">
                                                 <div
                                                     class="absolute top-4 right-4 bg-gold text-primary px-4 py-2 font-PlayFair font-bold text-lg">
-                                                    {{ $package->price ?? 'From $0' }}
+                                                    From $ {{ $package->price ?? 'From $0' }}
                                                 </div>
                                             </div>
                                             <div class="p-6">
@@ -101,7 +101,7 @@
                                                     </div>
                                                 </div>
                                                 <a href="{{route('packageshow',$package->slug)}}"
-                                                    class="w-full inline-block bg-primary hover:bg-primary/90 text-accent font-lora uppercase tracking-wide text-center py-3">
+                                                    class="w-full inline-block bg-primary  hover:bg-primary/90 text-accent font-lora uppercase tracking-wide text-center py-3">
                                                     View Details
                                                 </a>
                                             </div>
@@ -113,8 +113,19 @@
                             </div>
 
                             <!-- Floating Arrows -->
-                            <button class="swiper-button-prev-pac ...">...</button>
-                            <button class="swiper-button-next-pac ...">...</button>
+                            <button class="swiper-button-prev-pac absolute top-1/2 -translate-y-1/2 -left-3 md:-left-4  xl:-left-12
+                                            w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full bg-white/90
+                                            text-primary hover:bg-primary hover:text-white shadow-xl
+                                            transition-all duration-300 z-30">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+
+                            <button class="swiper-button-next-pac absolute top-1/2 -translate-y-1/2 -right-3 md:-right-4  xl:-right-12
+                                            w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/90
+                                            text-primary hover:bg-primary hover:text-white shadow-xl
+                                            transition-all duration-300 z-30">
+                                <i class="fa fa-chevron-right"></i>
+                            </button>
 
                         </div>
 
@@ -282,12 +293,9 @@
                                 <div class="bg-card shadow-lg rounded-lg p-8 flex flex-col">
 
                                     <!-- Stars -->
-                                    <div class="flex gap-1 mb-4">
+                                    <div class="flex gap-px mb-4">
                                         @for($i = 0; $i < $review->rateing; $i++)
-                                            <svg class="w-5 h-5 fill-gold" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M12 .587l3.668 7.568L24 9.423l-6 5.853L19.336 24 12 19.897 4.664 24 6 15.276 0 9.423z" />
-                                            </svg>
+                                        <i class="fa-solid fa-star text-gold"></i>
                                             @endfor
                                     </div>
 
@@ -320,6 +328,17 @@
             @if($reviewsVideo->count())
             <div id="videosContent" class="tab-content videos-swiper-container hidden">
                 <div class="swiper videos-swiper">
+                    <!-- Navigation Arrows -->
+                    <div class="flex justify-start gap-4 mb-6">
+                        <button
+                            class="swiper-button-next-video w-10 h-10 flex items-center justify-center rounded-full border border-gold text-gold hover:text-white hover:bg-gold/90 shadow-md transition">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                        <button
+                            class="swiper-button-prev-video w-10 h-10 flex items-center justify-center rounded-full border border-gold text-gold hover:text-white hover:bg-gold/90 shadow-md transition">
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                    </div>
                     <div class="swiper-wrapper">
                         @foreach($reviewsVideo as $video)
                         @php

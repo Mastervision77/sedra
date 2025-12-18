@@ -39,7 +39,7 @@ $setting = App\Models\Settings::first();
             <p class="flex items-center gap-2 text-primary mb-2 text-lg">
                 <i class="fa-solid fa-map-pin"></i> {{ $destination->location }}
             </p>
-            <h1 class="text-5xl md:text-7xl font-bold text-primary">
+            <h1 class="text-4xl md:text-6xl font-bold text-primary">
                 {{ $destination->title }}
             </h1>
         </div>

@@ -74,14 +74,32 @@ tabButtons.forEach(btn => {
     });
 });
 
-// Initialize Swipers
 const swiperTest = new Swiper('.testimonials-swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
+
     loop: true,
-    breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
-    navigation: { nextEl: '.swiper-button-next-test', prevEl: '.swiper-button-prev-test' },
+    loopAdditionalSlides: 3,   // important for smooth infinite loop
+    loopPreventsSliding: false,
+
+    autoplay: {
+        delay: 0,              // no delay → continuous
+        disableOnInteraction: false,
+    },
+
+    speed: 5000,               // higher = smoother continuous motion
+
+    breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next-test',
+        prevEl: '.swiper-button-prev-test',
+    },
 });
+
 
 const swiperVideos = new Swiper('.videos-swiper', {
     slidesPerView: 1,

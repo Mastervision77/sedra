@@ -40,7 +40,7 @@ $setting = App\Models\Settings::first();
             {{-- <i class="fa-solid fa-map-pin text-xl"></i> --}}
             {{-- <span class="text-xl">{{ $package->location }}</span> --}}
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-4">{{ $package->title }}</h1>
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">{{ $package->title }}</h1>
         <div class="flex flex-wrap gap-6 text-lg">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-calendar-days"></i>

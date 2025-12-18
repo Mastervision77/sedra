@@ -62,10 +62,8 @@ $setting = App\Models\Settings::first();
             </div>
 
             <!-- Article Content -->
-            <div class="prose prose-lg max-w-none" style="font-size:1.125rem; line-height:1.75;">
-                <p class="lead">
+            <div class="prose prose-lg max-w-none blog-content" style="font-size:1.125rem; line-height:1.75;">
                     {!! $blog->content !!}
-                </p>
             </div>
         </div>
 
