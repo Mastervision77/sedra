@@ -2,9 +2,9 @@
 $setting = App\Models\Settings::first();
 @endphp
 
-@if($blogs && $blogs->first()->title != null)
+@if($blogs && optional($blogs->first())->title != null)
 
-@section('meta_description'){!! \Str::limit(strip_tags(@$blogs->first()->title), 160) !!}@endsection
+@section('meta_description'){!! \Str::limit(strip_tags(optional($blogs->first())->title), 160) !!}@endsection
 
 @endif
 
@@ -13,8 +13,8 @@ $setting = App\Models\Settings::first();
 
 @endif
 
-@if($blogs && $blogs->first()->title != null)
-@section('og_description'){{ \Str::limit(strip_tags(@$blogs->first()->title), 160) }}@endsection
+@if($blogs && optional($blogs->first())->title != null)
+@section('og_description'){{ \Str::limit(strip_tags(optional($blogs->first())->title), 160) }}@endsection
 @endif
 
 

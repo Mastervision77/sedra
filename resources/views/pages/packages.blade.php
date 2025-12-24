@@ -2,9 +2,9 @@
 $setting = App\Models\Settings::first();
 @endphp
 
-@if($packages && $packages->first()->title != null)
+@if($packages && optional($packages->first())->title != null)
 
-@section('meta_description'){!! \Str::limit(strip_tags(@$packages->first()->title), 160) !!}@endsection
+@section('meta_description'){!! \Str::limit(strip_tags(optional($packages->first() )->title), 160) !!}@endsection
 
 @endif
 
@@ -13,8 +13,8 @@ $setting = App\Models\Settings::first();
 
 @endif
 
-@if($packages && $packages->first()->title != null)
-@section('og_description'){{ \Str::limit(strip_tags(@$packages->first()->title), 160) }}@endsection
+@if($packages && optional($packages->first())->title != null)
+@section('og_description'){{ \Str::limit(strip_tags(optional($packages->first())->title), 160) }}@endsection
 @endif
 
 
@@ -29,7 +29,7 @@ $setting = App\Models\Settings::first();
 
 @extends('layouts.app')
 @section('content')
-
+@if(@$setting)
 <main class="pt-11 md:pt-28 pb-20 bg-accent">
     <div class="container px-4">
         <div class="text-center mb-16">
@@ -121,5 +121,5 @@ $setting = App\Models\Settings::first();
         </div>
     </div>
 </main>
-
+@endif
 @endsection

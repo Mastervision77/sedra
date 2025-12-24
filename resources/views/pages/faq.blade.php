@@ -2,9 +2,9 @@
 $setting = App\Models\Settings::first();
 @endphp
 
-@if($faqs && $faqs->first()->title != null)
+@if($faqs && optional($faqs->first())->title != null)
 
-@section('meta_description'){!! \Str::limit(strip_tags(@$faqs->first()->title), 160) !!}@endsection
+@section('meta_description'){!! \Str::limit(strip_tags(optional($faqs->first())->title), 160) !!}@endsection
 
 @endif
 
@@ -13,8 +13,8 @@ $setting = App\Models\Settings::first();
 
 @endif
 
-@if($faqs && $faqs->first()->title != null)
-@section('og_description'){{ \Str::limit(strip_tags(@$faqs->first()->title), 160) }}@endsection
+@if($faqs && optional($faqs->first())->title != null)
+@section('og_description'){{ \Str::limit(strip_tags(optional($faqs->first())->title), 160) }}@endsection
 @endif
 
 @if($setting && $setting->umrahcover != null)

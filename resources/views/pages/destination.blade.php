@@ -2,9 +2,9 @@
 $setting = App\Models\Settings::first();
 @endphp
 
-@if($destinations && $destinations->first()->title != null)
+@if($destinations && optional($destinations->first())->title != null)
 
-@section('meta_description'){!! \Str::limit(strip_tags(@$destinations->first()->title), 160) !!}@endsection
+@section('meta_description'){!! \Str::limit(strip_tags(optional($destinations->first())->title), 160) !!}@endsection
 
 @endif
 
@@ -13,8 +13,8 @@ $setting = App\Models\Settings::first();
 
 @endif
 
-@if($destinations && $destinations->first()->title != null)
-@section('og_description'){{ \Str::limit(strip_tags(@$destinations->first()->title), 160) }}@endsection
+@if($destinations && optional($destinations->first())->title != null)
+@section('og_description'){{ \Str::limit(strip_tags(optional($destinations->first())->title), 160) }}@endsection
 @endif
 
 
