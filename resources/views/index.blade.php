@@ -46,7 +46,7 @@
                         <!-- Section Title -->
                         <div class="text-center mb-16">
                             <h2 class="font-PlayFair text-4xl md:text-5xl font-bold text-foreground mb-4">
-                                 <span class="text-gold">{{$setting->sub_title_packages_home}}</span>
+                                 <span class="text-gold">{{$setting->title_packages_home}}</span>
                             </h2>
                             <p class="font-lora text-muted-foreground text-lg max-w-2xl mx-auto">
                                 {{$setting->sub_title_packages_home}}
